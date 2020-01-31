@@ -1,11 +1,13 @@
 # AQweather
 
 A Weather ForeCast Application.
-Shows Current Weather
-Shows Five Days Forecast
+Shows Current Weather,
+Shows Five Days Forecast,
 Shows sunrise,sunset,humidity etc
-Shows Air Quality Index
-Shows Levels of Different Pollutant parameters
+![](Assets/Images/Screenshot_20200126-201058.png)
+Shows Air Quality Index,
+Shows Levels of Different Pollutant parameters,
+![](Assets/Images/Screenshot_20200126-004123.png)
 
 ## Getting Started
 
