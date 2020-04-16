@@ -39,7 +39,7 @@ class _AqiSearchState extends State<AqiSearch> {
   
    
    Future getAqi() async{
-      var response= await http.get(Uri.encodeFull("https://api.waqi.info/feed/geo:$latitude;$longitude/?token=4beb9d4d7424de855a8a6c4b436bffdbf97b1ef7"),
+      var response= await http.get(Uri.encodeFull("https://api.waqi.info/feed/geo:$latitude;$longitude/?token= your token goes here"),
        headers: {"results":"application/json"}
       );
       decodedJson3 = jsonDecode(response.body);

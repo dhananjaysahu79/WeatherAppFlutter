@@ -19,7 +19,6 @@ class CountryData extends StatefulWidget {
 
 class _CountryDataState extends State<CountryData> {
   TextEditingController t1 =TextEditingController();
-   var url ="56ea943804a332dfedff52ba6de1543a";
    var loc;
    var decodedJson;
    var humidity;
@@ -81,7 +80,7 @@ class _CountryDataState extends State<CountryData> {
   
 
   Future fetchData() async {
-    var res = await http.get(Uri.encodeFull("https://api.openweathermap.org/data/2.5/weather?q=$loc&units=imperial&appid=56ea943804a332dfedff52ba6de1543a"),
+    var res = await http.get(Uri.encodeFull("https://api.openweathermap.org/data/2.5/weather?q=$loc&units=imperial&appid= your key goes here"),
    headers: {"results":"application/json"}
     );
     decodedJson = jsonDecode(res.body);
@@ -107,7 +106,7 @@ class _CountryDataState extends State<CountryData> {
   }
 
    Future fetchForecastData() async {
-    var res1 = await http.get(Uri.encodeFull("http://api.openweathermap.org/data/2.5/forecast?q=$loc&units=imperial&mode=json&appid=56ea943804a332dfedff52ba6de1543a"),
+    var res1 = await http.get(Uri.encodeFull("http://api.openweathermap.org/data/2.5/forecast?q=$loc&units=imperial&mode=json&appid= your key goes here"),
    headers: {"results":"application/json"}
     );
     decodedJson2 = jsonDecode(res1.body);
