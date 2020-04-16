@@ -4,6 +4,7 @@ import 'dart:async';
 import 'package:http/http.dart'as http;
 import 'package:progressbar/linearprogress.dart';
 import 'progress.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 class AqiSearch extends StatefulWidget {
    var longitude,latitude,location;
    AqiSearch(this.longitude,this.latitude,this.location);
@@ -110,8 +111,17 @@ class _AqiSearchState extends State<AqiSearch> {
                     Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
-                    Text(aqi.toString(),style: TextStyle(color: Colors.white,fontSize: MediaQuery.of(context).size.height/14),),
-                    Text(calCondition(),textAlign: TextAlign.center,style: TextStyle(color: Colors.white,letterSpacing: 1,fontSize: MediaQuery.of(context).size.height/50),),
+                    AutoSizeText(
+                     aqi.toString(),
+                     minFontSize: 40,
+                     maxFontSize: 40,
+                     textScaleFactor: 0.8,
+                    style: TextStyle(color: Colors.white),),
+                    AutoSizeText(calCondition(),
+                      minFontSize: 18,
+                      maxFontSize: 18,
+                     textScaleFactor: 0.8,
+                    textAlign: TextAlign.center,style: TextStyle(color: Colors.white,letterSpacing: 1),),
                     ],)
                     
                   ],
@@ -130,7 +140,11 @@ class _AqiSearchState extends State<AqiSearch> {
                            stops: [0.0,0.9],
                          colors: [Color.fromARGB(210, 19, 206, 206),Color.fromARGB(210, 76, 240, 207),]
                     ),),
-                    child: Center(child: Text("${location}-AQI",style: TextStyle(color: Colors.black,letterSpacing: 2,fontSize: MediaQuery.of(context).size.height/40,fontWeight: FontWeight.bold),)),
+                    child: Center(child: AutoSizeText("${location}-AQI",
+                      minFontSize: 20,
+                      maxFontSize: 20,
+                     textScaleFactor: 0.8,
+                    style: TextStyle(color: Colors.black,letterSpacing: 2,fontWeight: FontWeight.bold),)),
                   ),
                  
               ],),
@@ -156,8 +170,11 @@ class _AqiSearchState extends State<AqiSearch> {
               ),
               
               Flexible(
-                child: Text("**Note: All The Null Values are because of the nearest pollution station of that city doesnot calculate those parameters ",
-                textAlign:TextAlign.center,style: TextStyle(color: Colors.white24,fontSize: MediaQuery.of(context).size.height/60),),
+                child: AutoSizeText("**Note: All The Null Values are because of the nearest pollution station of that city doesnot calculate those parameters ",
+                 minFontSize: 14,
+                      maxFontSize: 14,
+                     textScaleFactor: 0.8,
+               textAlign:TextAlign.center,style: TextStyle(color: Colors.white24),),
               ),
                Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/50),),     
             ],

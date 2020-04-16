@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:progressbar/splashscreen.dart';
-import 'progress.dart';
 import 'country_data.dart';
 
 void main()=>runApp(MyApp());
@@ -11,7 +9,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home:CountryData(),
-     theme: ThemeData(       
+      theme: ThemeData(       
        fontFamily: "GoogleSans",
        scaffoldBackgroundColor: Color.fromARGB(255, 19, 28, 26)
      ),

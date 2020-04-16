@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'dart:async';
 
@@ -52,8 +53,10 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
                           bottomLeft: Radius.circular(5)
                           )
                       ),
-                      child: Center(child: Text(name,
-                      style: TextStyle(fontSize: MediaQuery.of(context).size.height/50),
+                      child: Center(child: AutoSizeText(name,
+                         minFontSize: 14,
+                         maxFontSize: 14,
+                         textScaleFactor: 0.8,
                       )),
                     ),
                     Container(
@@ -82,7 +85,11 @@ class _LinearProgressBarState extends State<LinearProgressBar> {
                       ), duration: Duration(seconds: 5),curve: Curves.fastOutSlowIn,
                     ),
                     Padding(padding: EdgeInsets.only(left: 8),),
-                    Text(parameter==null?"null":parameter.toString(),style: TextStyle(color: Colors.white54,fontSize: MediaQuery.of(context).size.height/45),)
+                    AutoSizeText(parameter==null?"null":parameter.toString(),
+                      minFontSize: 13,
+                      maxFontSize: 13,
+                     textScaleFactor: 0.8,
+                    style: TextStyle(color: Colors.white54,),)
                   ],
                 );
   }

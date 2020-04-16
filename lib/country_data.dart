@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter/services.dart';
@@ -50,8 +51,6 @@ class _CountryDataState extends State<CountryData> {
    var day5_icon;
    var long ;
    var lat;
-   
-   //var curmax=0;
    var curmin;
    var first;
    var feels_like;
@@ -295,10 +294,13 @@ String readTimestamp(int timestamp) {
                          ],
                         ),
                        ),
-                    Text("AQ\nWeather",style:TextStyle(
-                     color:Colors.greenAccent,
-                     fontWeight: FontWeight.bold,
-                     fontSize: MediaQuery.of(context).size.height/40,
+                    AutoSizeText("AQ\nWeather",
+                      minFontSize: 18,
+                      maxFontSize: 18,
+                      textScaleFactor: 0.8,
+                      style:TextStyle(
+                      color:Colors.greenAccent,
+                      fontWeight: FontWeight.bold,
                     ))
                     ],
                     ),
@@ -353,15 +355,20 @@ String readTimestamp(int timestamp) {
                           Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/32),),
                           Row(
                           children: <Widget>[
-                              Text("Weather Forecast",
-                              style: TextStyle(fontSize: MediaQuery.of(context).size.height/30,fontWeight: FontWeight.bold,),                        
+                              AutoSizeText("Weather Forecast",
+                               minFontSize: 25,
+                               maxFontSize: 25,
+                               textScaleFactor: 0.8,
+                              style: TextStyle(fontWeight: FontWeight.bold,),                        
                               ),  
                           ],
                         ),
                          Row(
                           children: <Widget>[
-                              Text("Forecast from $day1 $date1 $month1 to $day5 $date5 $month5",
-                              style: TextStyle(fontSize: MediaQuery.of(context).size.height/55),                        
+                              AutoSizeText("Forecast from $day1 $date1 $month1 to $day5 $date5 $month5",
+                               minFontSize: 14,
+                               maxFontSize: 14,
+                              textScaleFactor: 0.8,                       
                               ),
                           ],
                         ),
@@ -376,7 +383,11 @@ String readTimestamp(int timestamp) {
                                      children: <Widget>[
                                        Row(
                                          children: <Widget>[
-                                           Text("$sday1",style: TextStyle(fontSize: MediaQuery.of(context).size.height/37,fontWeight: FontWeight.bold),)
+                                           AutoSizeText("$sday1",
+                                            minFontSize: 22,
+                                            maxFontSize: 22,
+                                            textScaleFactor: 0.8,
+                                           style: TextStyle(fontWeight: FontWeight.bold),)
                                          ],
                                        ),
                                       Row(
@@ -386,10 +397,10 @@ String readTimestamp(int timestamp) {
                                       ),
                                       Row(
                                          children: <Widget>[
-                                          Text(dailymin_temp[0]+"°/"+dailymax_temp[0]+"°",
-                                          style: TextStyle(
-                                            fontSize: MediaQuery.of(context).size.height/55
-                                          ),
+                                          AutoSizeText(dailymin_temp[0]+"°/"+dailymax_temp[0]+"°",
+                                           minFontSize: 15,
+                                            maxFontSize: 15,
+                                            textScaleFactor: 0.8,
 
                                           )
                                          ],
@@ -405,7 +416,11 @@ String readTimestamp(int timestamp) {
                                    children: <Widget>[
                                      Row(
                                        children: <Widget>[
-                                         Text("$sday2",style: TextStyle(fontSize: MediaQuery.of(context).size.height/37,fontWeight: FontWeight.bold),)
+                                         AutoSizeText("$sday2",
+                                            minFontSize: 22,
+                                            maxFontSize: 22,
+                                            textScaleFactor: 0.8,
+                                             style: TextStyle(fontWeight: FontWeight.bold),)
                                        ],
                                      ),
                                     Row(
@@ -415,10 +430,10 @@ String readTimestamp(int timestamp) {
                                     ),
                                     Row(
                                        children: <Widget>[
-                                     Text(dailymin_temp[1]+"°/"+dailymax_temp[1]+"°",
-                                     style: TextStyle(
-                                            fontSize: MediaQuery.of(context).size.height/55
-                                          ),
+                                     AutoSizeText(dailymin_temp[1]+"°/"+dailymax_temp[1]+"°",
+                                      minFontSize: 15,
+                                      maxFontSize: 15,
+                                      textScaleFactor: 0.8,
                                      )
                                        ],
                                      ),
@@ -433,7 +448,11 @@ String readTimestamp(int timestamp) {
                                    children: <Widget>[
                                      Row(
                                        children: <Widget>[
-                                        Text("$sday3",style: TextStyle(fontSize: MediaQuery.of(context).size.height/37,fontWeight: FontWeight.bold),)
+                                        AutoSizeText("$sday3",
+                                            minFontSize: 22,
+                                            maxFontSize: 22,
+                                            textScaleFactor: 0.8,
+                                        style: TextStyle(fontWeight: FontWeight.bold),)
                                        ],
                                      ),
                                     Row(
@@ -443,10 +462,10 @@ String readTimestamp(int timestamp) {
                                     ),
                                     Row(
                                        children: <Widget>[
-                                         Text(dailymin_temp[2]+"°/"+dailymax_temp[2]+"°",
-                                         style: TextStyle(
-                                            fontSize: MediaQuery.of(context).size.height/55
-                                          ),
+                                         AutoSizeText(dailymin_temp[2]+"°/"+dailymax_temp[2]+"°",
+                                         minFontSize: 15,
+                                         maxFontSize: 15,
+                                         textScaleFactor: 0.8,
                                          )
                                        ],
                                      ),
@@ -461,7 +480,11 @@ String readTimestamp(int timestamp) {
                                    children: <Widget>[
                                      Row(
                                        children: <Widget>[
-                                         Text("$sday4",style: TextStyle(fontSize: MediaQuery.of(context).size.height/37,fontWeight: FontWeight.bold),)
+                                         AutoSizeText("$sday4",
+                                            minFontSize: 22,
+                                            maxFontSize: 22,
+                                            textScaleFactor: 0.8,
+                                         style: TextStyle(fontWeight: FontWeight.bold),)
                                        ],
                                      ),
                                     Row(
@@ -471,10 +494,10 @@ String readTimestamp(int timestamp) {
                                     ),
                                     Row(
                                        children: <Widget>[
-                                         Text(dailymin_temp[3]+"°/"+dailymax_temp[3]+"°",
-                                         style: TextStyle(
-                                            fontSize: MediaQuery.of(context).size.height/55
-                                          ),
+                                         AutoSizeText(dailymin_temp[3]+"°/"+dailymax_temp[3]+"°",
+                                          minFontSize: 15,
+                                          maxFontSize: 15,
+                                          textScaleFactor: 0.8,
                                          )
                                        ],
                                      ),
@@ -489,7 +512,11 @@ String readTimestamp(int timestamp) {
                                    children: <Widget>[
                                      Row(
                                        children: <Widget>[
-                                         Text("$sday5",style: TextStyle(fontSize: MediaQuery.of(context).size.height/37,fontWeight: FontWeight.bold),)
+                                         AutoSizeText("$sday5",
+                                            minFontSize: 22,
+                                            maxFontSize: 22,
+                                            textScaleFactor: 0.8,
+                                         style: TextStyle(fontWeight: FontWeight.bold),)
                                        ],
                                      ),
                                     Row(
@@ -499,10 +526,10 @@ String readTimestamp(int timestamp) {
                                     ),
                                     Row(
                                        children: <Widget>[
-                                         Text(dailymin_temp[4]+"°/"+dailymax_temp[4]+"°",
-                                         style: TextStyle(
-                                            fontSize: MediaQuery.of(context).size.height/55
-                                          ),
+                                         AutoSizeText(dailymin_temp[4]+"°/"+dailymax_temp[4]+"°",
+                                          minFontSize: 15,
+                                          maxFontSize: 15,
+                                          textScaleFactor: 0.8,
                                          )
                                        ],
                                      ),
@@ -527,23 +554,26 @@ String readTimestamp(int timestamp) {
             children: <Widget>[
               Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/22),),
               Expanded(child: 
-              Text("$location",
+              AutoSizeText("$location",
+              minFontSize: 31,
+              maxFontSize: 31,
+              textScaleFactor: 0.8,
               style: TextStyle(
                 color:Colors.white,
                 fontWeight: FontWeight.bold,
-                fontSize: MediaQuery.of(context).size.height/25
-
                  ),
               )),
               Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/32),),
               InkWell(
                onTap:()=>{Navigator.of(context).push(MaterialPageRoute<Null>(builder:(BuildContext context){return AqiSearch(long,lat,location);}))},
                 splashColor: Colors.blue,
-                child: Text("AIR\nQUALITY",
+                child: AutoSizeText("AIR\nQUALITY",
+                minFontSize: 13,
+                maxFontSize: 13,
+                textScaleFactor: 0.8,
                 textAlign: TextAlign.center,
                 style:TextStyle(
                   color: Colors.white,
-                  fontSize: MediaQuery.of(context).size.height/65
                   )
                 ),
               ),
@@ -567,10 +597,12 @@ String readTimestamp(int timestamp) {
           Row(
             children: <Widget>[
                Padding(padding: EdgeInsets.only(left: MediaQuery.of(context).size.width/21),),
-              Expanded(child: Text((type==null)?"null":type.toString(),
+              Expanded(child: AutoSizeText((type==null)?"null":type.toString(),
+              minFontSize: 15,
+              maxFontSize: 15,
+              textScaleFactor: 0.8,
               style: TextStyle(
-                color: Colors.white54,
-                fontSize: MediaQuery.of(context).size.height/48
+                color: Colors.white54
               ),
               ))
             ],
@@ -621,9 +653,11 @@ String readTimestamp(int timestamp) {
                            Row(
                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                              children: <Widget>[
-                              Text(temp==null?" ":temp.toString()+"°C",
+                              AutoSizeText(temp==null?" ":temp.toString()+"°C",
+                              minFontSize: 75,
+                              maxFontSize: 75,
+                              textScaleFactor: 0.8,
                               style: TextStyle(
-                                fontSize: MediaQuery.of(context).size.height/11,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.white
                               )
@@ -641,7 +675,7 @@ String readTimestamp(int timestamp) {
                              
                            ],
                            ),
-                          // Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/60),),
+                           Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/60),),
                            Row(
                              children: <Widget>[
                                Container(
@@ -655,10 +689,12 @@ String readTimestamp(int timestamp) {
                            Row(
                              mainAxisAlignment: MainAxisAlignment.center,
                              children: <Widget>[
-                               Expanded(child: Text("Today in the City $location is $type with Temperature max "+curmax.toString() +"°C and temperature min "+curmin.toString() +"°C",
+                               Expanded(child: AutoSizeText("Today in the City $location is $type with Temperature max "+curmax.toString() +"°C and temperature min "+curmin.toString() +"°C",
+                               minFontSize: 13,
+                               maxFontSize: 13,
+                               textScaleFactor: 0.8,
                                style: TextStyle(
                                  color: Colors.white,
-                                 fontSize: MediaQuery.of(context).size.height/57,
                                  fontWeight: FontWeight.bold
                                  ),))
                              ],
@@ -695,8 +731,16 @@ String readTimestamp(int timestamp) {
                     children: <Widget>[
                       Icon(MdiIcons.waterOutline,color:Colors.blue,size: MediaQuery.of(context).size.height/30,),
                       Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/70),),
-                      Text("HUMIDITY",style:TextStyle(color:Colors.blue,fontSize:MediaQuery.of(context).size.height/75,fontWeight:FontWeight.bold)),
-                      Text((humidity==null)?"null":humidity.toString()+" %",style:TextStyle(color:Colors.blue,fontSize:MediaQuery.of(context).size.height/76,fontWeight:FontWeight.bold)),
+                      AutoSizeText("HUMIDITY",
+                      minFontSize: 13,
+                      maxFontSize: 13,
+                      textScaleFactor: 0.8,
+                      style:TextStyle(color:Colors.blue,fontWeight:FontWeight.bold)),
+                      AutoSizeText((humidity==null)?"null":humidity.toString()+" %",
+                      minFontSize: 12,
+                      maxFontSize: 12,
+                     textScaleFactor: 0.8,
+                      style:TextStyle(color:Colors.blue,fontWeight:FontWeight.bold)),
                     ],
                   ),
                  ),
@@ -713,8 +757,16 @@ String readTimestamp(int timestamp) {
                      children: <Widget>[
                        Icon(MdiIcons.weatherWindy,color:Colors.greenAccent,size: MediaQuery.of(context).size.height/30,),
                        Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/70),),
-                      Text("WIND",style:TextStyle(color:Colors.greenAccent,fontSize:MediaQuery.of(context).size.height/75,fontWeight:FontWeight.bold)),
-                      Text("$wind KMH",style:TextStyle(color:Colors.greenAccent,fontSize:MediaQuery.of(context).size.height/76,fontWeight:FontWeight.bold)),
+                      AutoSizeText("WIND",
+                        minFontSize: 13,
+                      maxFontSize: 13,
+                     textScaleFactor: 0.8,
+                      style:TextStyle(color:Colors.greenAccent,fontWeight:FontWeight.bold)),
+                      AutoSizeText("$wind KMH",
+                        minFontSize: 12,
+                      maxFontSize: 12,
+                     textScaleFactor: 0.8,
+                      style:TextStyle(color:Colors.greenAccent,fontWeight:FontWeight.bold)),
                      ],
                    ),
                  ),
@@ -731,8 +783,16 @@ String readTimestamp(int timestamp) {
                     children: <Widget>[
                       Icon(MdiIcons.weatherSunsetUp,color:Colors.deepOrangeAccent,size: MediaQuery.of(context).size.height/30,),
                       Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/70),),
-                      Text("SUNRISE",style:TextStyle(color:Colors.deepOrangeAccent,fontSize:MediaQuery.of(context).size.height/75,fontWeight:FontWeight.bold)),
-                      Text(readTimestamp(sunrise)==null?"":readTimestamp(sunrise),style:TextStyle(color:Colors.deepOrangeAccent,fontSize:MediaQuery.of(context).size.height/76,fontWeight:FontWeight.bold)),
+                      AutoSizeText("SUNRISE",
+                        minFontSize: 13,
+                      maxFontSize: 13,
+                     textScaleFactor: 0.8,
+                      style:TextStyle(color:Colors.deepOrangeAccent,fontWeight:FontWeight.bold)),
+                      AutoSizeText(readTimestamp(sunrise)==null?"":readTimestamp(sunrise),
+                        minFontSize: 12,
+                      maxFontSize: 12,
+                     textScaleFactor: 0.8,
+                      style:TextStyle(color:Colors.deepOrangeAccent,fontWeight:FontWeight.bold)),
                     ],
                   ),
                  ),
@@ -752,8 +812,16 @@ String readTimestamp(int timestamp) {
                     children: <Widget>[
                       Icon(MdiIcons.weatherSunsetDown,color:Colors.purple,size: MediaQuery.of(context).size.height/30,),
                       Padding(padding: EdgeInsets.only(top: MediaQuery.of(context).size.height/70),),
-                      Text("SUNSET",style:TextStyle(color:Colors.purple,fontSize:MediaQuery.of(context).size.height/75,fontWeight:FontWeight.bold)),
-                      Text(readTimestamp(sunset),style:TextStyle(color:Colors.purple,fontSize:MediaQuery.of(context).size.height/76,fontWeight:FontWeight.bold)),
+                      AutoSizeText("SUNSET",
+                        minFontSize: 13,
+                      maxFontSize: 13,
+                     textScaleFactor: 0.8,
+                      style:TextStyle(color:Colors.purple,fontWeight:FontWeight.bold)),
+                      AutoSizeText(readTimestamp(sunset),
+                        minFontSize: 12,
+                      maxFontSize: 12,
+                     textScaleFactor: 0.8,
+                      style:TextStyle(color:Colors.purple,fontWeight:FontWeight.bold)),
                     ],
                   ),
                  ),
